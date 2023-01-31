@@ -32,7 +32,7 @@ if st.button('Submit'):
                 model="text-davinci-003",
                 prompt=prompt,
                 temperature=0.9,
-                max_tokens=500,
+                max_tokens=300,
                 top_p=1,
                 frequency_penalty=0,
                 presence_penalty=0.6,
