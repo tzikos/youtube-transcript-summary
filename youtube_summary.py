@@ -35,7 +35,6 @@ if st.button('Submit'):
                 top_p=1,
                 frequency_penalty=0,
                 presence_penalty=0.6,
-                stop = 
             )
             summary = response["choices"][0]["text"]
             st.write(summary)
