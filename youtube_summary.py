@@ -10,7 +10,7 @@ openai.api_key = "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"
 video_url = st.text_input("Enter the YouTube video URL: ")
 
 question = st.text_input('What do you want to ask for this video?: ')
-if not (video_url.isnull() and question.isnull()):
+if (video_url and question):
     video_id = video_url.split("watch?v=")[-1]
     transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
 
