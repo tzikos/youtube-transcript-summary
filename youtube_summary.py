@@ -38,7 +38,7 @@ if st.button('Submit'):
                 presence_penalty=0.6,
                 stop = 'I hope it helps'
             )
-            summary = response["choices"][0]["text"]+'\n\nI hope it helps'
+            summary = response["choices"][0]["text"]+'\n\nI hope it helps !'
             st.write(summary)
         except _errors.TranscriptsDisabled:
             st.write('Subtitles are disabled for this video.')
