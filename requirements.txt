@@ -1,0 +1,2 @@
+openai==0.26.4
+youtube_transcript_api==0.5.0
