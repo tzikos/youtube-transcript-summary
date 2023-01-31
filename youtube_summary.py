@@ -40,7 +40,7 @@ try:
                     temperature=0.9,
                     max_tokens=3000,
                     top_p=1,
-                    frequency_penalty=0,
+                    frequency_penalty=0.8,
                     presence_penalty=0.9,
                     stop = '~'
                 )
