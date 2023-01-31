@@ -12,7 +12,7 @@ openai.api_key = str(key)
 
 video_url = st.text_input("Enter the YouTube video URL: ")
 
-question = st.text_input('What do you want to ask for this video?: ')
+question = st.text_input('What information do you need from this video?: ')
 
 if st.button('Submit'):
     if (video_url and question and key):
@@ -20,7 +20,7 @@ if st.button('Submit'):
             video_id = video_url.split("watch?v=")[-1]
         else:
             video_id = video_url.split("/")[-1]
-            
+
         try:
             transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
             transcripts_en = [t.fetch() for t in transcript_list if t.language_code == 'en']
