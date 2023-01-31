@@ -16,10 +16,8 @@ question = st.text_input('What information do you need from this video?: ')
 try:
     if st.button('Submit'):
         if (video_url and question and key):
-            if "watch?v=" in video_url:
-                video_id = video_url.split("watch?v=")[-1]
-            else:
-                video_id = video_url.split("/")[-1]
+
+            video_id = video_url.split("/")[-1].replace('watch?v=','')
 
             try:
                 transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
@@ -51,4 +49,4 @@ try:
         else :
             'Provide a valid YouTube link and your question.'
 except openai.error.AuthenticationError:
-    print('Please provide a valid API key.')
+    st.write('Please provide a valid API key.')
