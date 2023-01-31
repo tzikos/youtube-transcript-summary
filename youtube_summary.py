@@ -4,14 +4,13 @@ import streamlit as st
 
 st.header('YouTube video summary App')
 
+st.write('Make sure that the video has subtitles!')
 
 openai.api_key = "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"
 
 video_url = st.text_input("Enter the YouTube video URL: ")
 
 question = st.text_input('What do you want to ask for this video?: ')
-
-st.write('Make sure that the video has subtitles!')
 
 if st.button('Submit'):
     if (video_url and question):
@@ -46,4 +45,3 @@ if st.button('Submit'):
     else :
         'Provide a valid YouTube link and your question.'
 
-    
