@@ -17,7 +17,10 @@ try:
     if st.button('Submit'):
         if (video_url and question and key):
 
-            video_id = video_url.split("/")[-1].replace('watch?v=','')
+            if "watch?v=" in video_url:
+                video_id = video_url.split("watch?v=")[-1]
+            else:
+                video_id = video_url.split("/")[-1]
 
             try:
                 transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
