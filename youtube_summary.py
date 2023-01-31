@@ -1,6 +1,8 @@
 from youtube_transcript_api import YouTubeTranscriptApi
 import openai
-import random
+import streamlit as st 
+
+st.header('YouTube video summary App')
 
 openai.api_key = "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"
 
