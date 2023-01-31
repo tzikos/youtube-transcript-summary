@@ -36,6 +36,6 @@ while True:
     )
     summary = response["choices"][0]["text"]
     st.write(summary)
-    continue
+    
 
     
