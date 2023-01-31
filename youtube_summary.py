@@ -11,6 +11,8 @@ video_url = st.text_input("Enter the YouTube video URL: ")
 
 question = st.text_input('What do you want to ask for this video?: ')
 
+st.write('Make sure that the video has subtitles!')
+
 if st.button('Submit'):
     if (video_url and question):
         video_id = video_url.split("watch?v=")[-1]
@@ -37,7 +39,7 @@ if st.button('Submit'):
                 presence_penalty=0.6,
                 stop = 'I hope it helps'
             )
-            summary = response["choices"][0]["text"]+'\nI hope it helps'
+            summary = response["choices"][0]["text"]+'\n\nI hope it helps'
             st.write(summary)
         except _errors.TranscriptsDisabled:
             st.write('Subtitles are disabled for this video.')
