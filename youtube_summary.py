@@ -38,10 +38,10 @@ try:
                     model="text-davinci-003",
                     prompt=prompt,
                     temperature=0.9,
-                    max_tokens=10000,
+                    max_tokens=3000,
                     top_p=1,
                     frequency_penalty=0,
-                    presence_penalty=0.6,
+                    presence_penalty=0.9,
                     stop = '~'
                 )
                 summary = response["choices"][0]["text"]
