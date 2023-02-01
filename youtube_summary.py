@@ -24,7 +24,7 @@ try:
 
             try:
                 transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
-                transcripts_en = [t.fetch() for t in transcript_list if t.language_code == 'en']
+                transcripts_en = [t.fetch() for t in transcript_list if (t.language_code == 'en' or t.language_code == 'en-US')]
                 if not transcripts_en:
                     st.write("No English transcripts found")
                     
