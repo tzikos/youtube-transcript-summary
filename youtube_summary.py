@@ -41,8 +41,8 @@ try:
                     temperature=0.9,
                     max_tokens=1000,
                     top_p=0.5,
-                    frequency_penalty=1.3,
-                    presence_penalty=1.3,
+                    frequency_penalty=0,
+                    presence_penalty=0.6,
                     stop = '~'
                 )
                 summary = response["choices"][0]["text"]
