@@ -31,14 +31,14 @@ try:
 
                 text = " ".join(t['text'] for t in transcripts_en[0])
                 #prompt = f'{question} from this text: {(lambda x: " ".join(random.sample(x.split(),3500)) if len(x.split())>4097 else x)(text)}'
-                prompt = f'Answer this :{question} from this text: {text}, with "~" to be the last character of the response'
+                prompt = f'Answer this :{question} from this text: {text}'
                 if len(text.split())>4097:
                     st.write('The text is too long.')
                     
                 response = openai.Completion.create(
                     model="text-davinci-003",
                     prompt=prompt,
-                    temperature=0.3,
+                    temperature=0.9,
                     max_tokens=1000,
                     top_p=0.5,
                     frequency_penalty=1.3,
