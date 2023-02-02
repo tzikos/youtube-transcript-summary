@@ -7,7 +7,7 @@ st.header('YouTube video summary App')
 st.write("An OpenAI API key is needed. Please visit https://platform.openai.com/account/api-keys and copy yours, or create a new one.")
 st.write('Make sure that the video has subtitles!')
 
-key = st.text_input("Paste your API key here: ") 
+key = st.text_input("Paste your API key here: ", type='password') 
 openai.api_key = str(key)
 
 video_url = st.text_input("Enter the YouTube video URL: ")
